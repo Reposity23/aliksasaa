@@ -63,11 +63,7 @@
             transition: all 1s ease;
         }
 
-        .container.hide-for-beach {
-            transform: scale(0);
-            opacity: 0;
-            pointer-events: none;
-        }
+        .container.hide-for-beach { transform: scale(0); opacity: 0; pointer-events: none; }
 
         header { text-align: center; margin-bottom: 5px; border-bottom: 1px solid rgba(251, 191, 36, 0.1); padding-bottom: 10px; flex-shrink: 0; }
         h1 { font-family: 'Cinzel', serif; color: var(--gold); margin: 0; font-size: 1.2rem; letter-spacing: 2px; }
@@ -97,36 +93,22 @@
         .btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3); }
         .btn:disabled { opacity: 0.4; cursor: not-allowed; filter: grayscale(1); }
 
-        /* --- RATATOUILLE STYLES IMPROVED --- */
-        .mixing-zone { 
-            position: relative; 
-            width: 100%; 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-        }
-        .bowl-wrapper { 
-            transition: transform 0.8s ease; 
-            z-index: 10; 
-            margin-bottom: 20px;
-        }
-        .mixing-zone.shifted .bowl-wrapper { transform: translateY(-20px) scale(0.9); }
-        
+        /* MIXING ZONE RE-ADJUSTED */
+        .mixing-zone { position: relative; width: 100%; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .bowl-wrapper { transition: transform 0.8s ease; z-index: 10; margin-bottom: 10px; }
         .bowl { width: 120px; height: 60px; background: #e2e8f0; border-radius: 0 0 60px 60px; border: 4px solid white; border-top: none; position: relative; }
         
         .rat-container {
             position: relative; 
-            margin-top: 10px;
-            width: 200px; 
-            height: 220px;
+            margin-top: 15px;
+            width: 180px; 
+            height: 200px;
             transform: scale(0); 
             transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             opacity: 0; 
             z-index: 5;
         }
-        .mixing-zone.shifted .rat-container { transform: scale(0.9); opacity: 1; }
+        .mixing-zone.shifted .rat-container { transform: scale(0.85); opacity: 1; }
 
         .speech-bubble {
             position: absolute; top: -30px; left: 50%; transform: translateX(-50%) scale(0.5); 
@@ -149,7 +131,7 @@
         .hat-bottom { width: 60px; height: 30px; background: white; border-bottom: 2px solid #ddd; }
         .hat-top { position: absolute; top: -35px; left: -5px; width: 70px; height: 50px; background: white; border-radius: 50% 50% 15% 15%; }
 
-        /* --- BAKING STAGE --- */
+        /* BAKING STAGE */
         .baking-area { position: relative; width: 100%; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .oven { width: 160px; height: 110px; background: #334155; border-radius: 10px; border: 5px solid #475569; position: relative; z-index: 10; }
         .oven-glass { width: 80%; height: 55%; background: #0f172a; margin: 12% auto; border-radius: 5px; }
@@ -158,7 +140,7 @@
         .band-container { display: flex; gap: 5px; align-items: flex-end; justify-content: center; margin-top: 15px; transform: scale(0.65); opacity: 0; transition: 1s; width: 100%; }
         .band-container.visible { opacity: 1; }
 
-        /* --- BTS CHIBI --- */
+        /* BTS CHIBI */
         .member { display: flex; flex-direction: column; align-items: center; position: relative; opacity: 0; transform: translateY(10px); }
         .member.spawned { opacity: 1; transform: translateY(0); transition: 0.5s; }
         .m-name { margin-top: 3px; font-size: 0.45rem; color: var(--gold); font-weight: bold; }
@@ -181,7 +163,6 @@
         .v .hair { background: #c4a484; border-radius: 15px; }
         .jk .hair { background: #111; border-radius: 5px 20px; }
 
-        /* --- ASSEMBLY & CAKE --- */
         .cake-display-area { width: 100%; height: 220px; display: flex; flex-direction: column-reverse; align-items: center; justify-content: flex-start; padding-bottom: 10px; position: relative; }
         .layer { position: relative; border-radius: 10px 10px 6px 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); margin-bottom: -8px; transition: 0.4s; }
         .f-vanilla { background: #fde68a; } .f-pink { background: #fda4af; } .f-choc { background: #78350f; } .f-cream { background: #f1f5f9; }
@@ -190,21 +171,15 @@
         @keyframes jump-action { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         @keyframes flicker { from { opacity: 0.7; transform: scale(1); } to { opacity: 1; transform: scale(1.1); } }
 
-        /* --- GIFT BOX --- */
-        .gift-box {
-            position: relative; width: 150px; height: 130px; background: #2c3e50; 
-            border-radius: 0 0 10px 10px; display: flex; justify-content: center; cursor: pointer;
-        }
+        /* GIFT BOX */
+        .gift-box { position: relative; width: 150px; height: 130px; background: #2c3e50; border-radius: 0 0 10px 10px; display: flex; justify-content: center; cursor: pointer; }
         .gift-box::before { content: ''; position: absolute; top: 35px; width: 100%; height: 20px; background: #f1c40f; opacity: 0.8; }
         .gift-box .ribbon-v { position: absolute; width: 30px; height: 100%; background: #f1c40f; z-index: 2; }
-        .gift-box .lid {
-            position: absolute; top: -20px; width: 170px; height: 30px; background: #34495e;
-            border-radius: 5px; z-index: 10; transition: transform 0.8s ease;
-        }
+        .gift-box .lid { position: absolute; top: -20px; width: 170px; height: 30px; background: #34495e; border-radius: 5px; z-index: 10; transition: transform 0.8s ease; }
         .gift-box .lid::after { content: '🎀'; position: absolute; top: -40px; left: 50%; transform: translateX(-50%); font-size: 50px; }
         .gift-box .click-me { position: absolute; bottom: 30px; color: white; font-weight: bold; font-style: italic; z-index: 5; font-size: 1rem; text-shadow: 1px 1px 2px black; }
 
-        /* --- BEACH --- */
+        /* BEACH */
         #beach-scene { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(to bottom, var(--sky) 0%, #a6e3ff 100%); display: none; z-index: 500; overflow: hidden; }
         #beach-scene.active { display: block; }
         #intro-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100; font-size: 2rem; font-weight: 900; color: white; text-align: center; width: 80%; animation: cloudFade 3s forwards; }
@@ -358,6 +333,8 @@
     let layerIdx = 0;
     let candleColor = '';
     let currentBtsStep = 0;
+    let ovenFinished = false;
+    let dialogueFinished = false;
     const widths = [200, 170, 140, 110, 80];
     
     const remyMsgs = [
@@ -370,11 +347,11 @@
     ];
 
     const btsScript = [
-        { name: 'v', text: "Helping!", time: 2000 },
-        { name: 'rm', text: "Almost done!", time: 2000 },
-        { name: 'jin', text: "Looks tasty!", time: 2000 },
-        { name: 'all', text: "Happy Birthday Alexa!", time: 3000 },
-        { name: 'finale', text: "PARTY!", time: 3000 }
+        { name: 'v', text: "Helping!", time: 2500 },
+        { name: 'rm', text: "Almost done!", time: 2500 },
+        { name: 'jin', text: "Looks tasty!", time: 2500 },
+        { name: 'all', text: "Happy Birthday Alexa!", time: 3500 },
+        { name: 'finale', text: "PARTY!", time: 3500 }
     ];
 
     function nextStage(n) {
@@ -407,20 +384,33 @@
         }
     }
 
+    function checkBakeProgress() {
+        if (ovenFinished && dialogueFinished) {
+            document.getElementById('toAssemblyBtn').style.display = 'block';
+        }
+    }
+
     function runBake() {
-        document.getElementById('bakeBtn').style.display = 'none';
+        document.getElementById('bakeBtn').disabled = true;
         document.getElementById('oven').classList.add('heating');
+        
+        // Start conversation after a short delay
         setTimeout(() => {
             document.getElementById('bts-band').classList.add('visible');
             spawnChibis(0);
-        }, 2000);
+        }, 1500);
 
+        // Slow down temperature timer (Increments every 150ms instead of 100ms)
         let t = 0;
         let itv = setInterval(() => {
-            t += 3;
+            t += 1;
             document.getElementById('temp').innerText = t + "°C";
-            if(t >= 180) { clearInterval(itv); document.getElementById('toAssemblyBtn').style.display = 'block'; }
-        }, 100);
+            if(t >= 180) { 
+                clearInterval(itv); 
+                ovenFinished = true;
+                checkBakeProgress();
+            }
+        }, 150); 
     }
 
     function spawnChibis(idx) {
@@ -433,14 +423,27 @@
     }
 
     function playBtsDialogue() {
-        if (currentBtsStep >= btsScript.length) return;
+        if (currentBtsStep >= btsScript.length) {
+            dialogueFinished = true;
+            checkBakeProgress();
+            return;
+        }
+        
         const step = btsScript[currentBtsStep];
         const bubbles = document.querySelectorAll('.member .bubble');
         bubbles.forEach(b => b.classList.remove('show'));
+        
         setTimeout(() => {
-            if (step.name === 'all') { bubbles.forEach(b => { b.innerText = step.text; b.classList.add('show'); }); }
-            else if (step.name === 'finale') { document.querySelectorAll('.member, .oven').forEach(el => el.classList.add('jump')); }
-            else { const active = document.querySelector(`.${step.name} .bubble`); if(active) { active.innerText = step.text; active.classList.add('show'); } }
+            if (step.name === 'all') { 
+                bubbles.forEach(b => { b.innerText = step.text; b.classList.add('show'); }); 
+            }
+            else if (step.name === 'finale') { 
+                document.querySelectorAll('.member, .oven').forEach(el => el.classList.add('jump')); 
+            }
+            else { 
+                const active = document.querySelector(`.${step.name} .bubble`); 
+                if(active) { active.innerText = step.text; active.classList.add('show'); } 
+            }
             currentBtsStep++;
             setTimeout(playBtsDialogue, step.time);
         }, 400);
